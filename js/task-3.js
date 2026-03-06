@@ -1,14 +1,12 @@
 'use strict';
 
-function checkForSpam(message) {
-  const checkMessage = message.toLowerCase();
-
-  return checkMessage.includes('sale') || checkMessage.includes('spam');
+function slugify(title) {
+  const lowerCaseTitle = title.toLowerCase();
+  let newTitle = lowerCaseTitle.split(' ').join('-');
+  return newTitle;
+  // return title.toLowerCase().split(' ').join('-');
 }
-console.log(checkForSpam('Latest technology news')); // false
-console.log(checkForSpam('JavaScript weekly newsletter')); // false
-console.log(checkForSpam('Get best sale offers now!')); // true
-console.log(checkForSpam('Amazing SalE, only tonight!')); // true
-console.log(checkForSpam('Trust me, this is not a spam message')); // true
-console.log(checkForSpam('Get rid of sPaM emails. Our book in on sale!')); // true
-console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+console.log(slugify('Arrays for beginners')); // "arrays-for-beginners"
+console.log(slugify('English for developer')); // "english-for-developer"
+console.log(slugify('Ten secrets of JavaScript')); // "ten-secrets-of-javascript"
+console.log(slugify('How to become a JUNIOR developer in TWO WEEKS')); // "how-to-become-a-junior-developer-in-two-weeks"
