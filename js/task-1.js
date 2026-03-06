@@ -1,10 +1,7 @@
 'use strict';
 
 function slugify(title) {
-  const lowerCaseTitle = title.toLowerCase();
-  let newTitle = lowerCaseTitle.split(' ').join('-');
-  return newTitle;
-  // return title.toLowerCase().split(' ').join('-');
+  return title.toLowerCase().split(' ').join('-');
 }
 console.log(slugify('Arrays for beginners')); // "arrays-for-beginners"
 console.log(slugify('English for developer')); // "english-for-developer"
